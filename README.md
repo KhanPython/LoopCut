@@ -7,7 +7,7 @@
 
 # Installation:
 #### Method 1: [Roblox library](https://www.roblox.com/library/7158238819/LoopCut)
-#### Method 2: [latest release](https://github.com/KhanPython/LoopCut/blob/main/LoopCutV3.rbxmx)
+#### Method 2: [latest release](https://github.com/KhanPython/LoopCut/blob/master/Plugin.rbxmx)
 
 # Setup:
 I have tried my best to keep the usage of this plugin as simple/intuitive as possible. The initial set-up is relatively straight-forward and only consists of setting up relevant keybinds:
