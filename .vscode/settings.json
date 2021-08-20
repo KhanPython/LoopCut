@@ -1,0 +1,8 @@
+{
+    "Lua.diagnostics.ignore": [
+        "Angles",
+        "ToEulerAngles",
+        "new"
+    ],
+    "git.ignoreLimitWarning": true
+}
