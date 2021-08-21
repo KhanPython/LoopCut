@@ -26,10 +26,10 @@ local Visualizer = {}
             assert(Object ~= nil, "Missing arguments!")
 
                 local selectionBox = Instance.new("SelectionBox")
-                selectionBox.Parent = Object
                 selectionBox.Adornee = Object
                 selectionBox.LineThickness = DEFAULT_OUTLINE_THICKNESS
                 selectionBox.Color3 = DEFAULT_SELECTION_COLOR
+                selectionBox.Parent = Object
         end
 
 
@@ -82,9 +82,9 @@ local Visualizer = {}
             partToClone.CanCollide = false
             partToClone.CanTouch = false
             partToClone.Transparency = 1
-            partToClone.Parent = containerData.container
             partToClone.Position = Vector3.new(MATH_HUGE, MATH_HUGE, MATH_HUGE)
-
+            partToClone.Parent = containerData.container
+            
             Logic:_Subdivide(containerData.container, obj, numOfDivisions, partToClone)
             self:_ApplyVisualizationsIn(containerData.container)
         end

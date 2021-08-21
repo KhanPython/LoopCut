@@ -40,8 +40,8 @@ local Container = {}
 
     function Container:CreateContainer()
         containerData.container = Instance.new("Folder")
-        containerData.container.Parent = workspace.CurrentCamera
         containerData.container.Name = CONTAINER_NAME
+        containerData.container.Parent = workspace.CurrentCamera
     end
 
 
