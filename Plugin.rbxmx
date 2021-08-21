@@ -1,20 +1,20 @@
 <roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Folder" referent="RBXD9AAABAFFDE84DC68B079E4C7F75247C">
+	<Item class="Folder" referent="RBXC65328C1FE064E8AA64C22CF7CA53D60">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<string name="Name">Plugin</string>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="Script" referent="RBXB9C1707012794237A42094D8FB5FE978">
+		<Item class="Script" referent="RBX166C797D1B0449709B524D890447261D">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="Disabled">false</bool>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Main</string>
-				<string name="ScriptGuid">{B7F716F0-A46E-474B-BF44-BF7BBA84F078}</string>
+				<string name="ScriptGuid">{2BD7CADC-BD97-402D-B620-B1F8FBEA187F}</string>
 				<ProtectedString name="Source"><![CDATA[--[[
 
     You may have noticed that I'm running :_Subdivide method twice: once in the CutVisualizer and once in
@@ -172,19 +172,19 @@ updatePluginStatus(false)
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
-		<Item class="Folder" referent="RBX04B9969F7521441DA42D8DA151219635">
+		<Item class="Folder" referent="RBXA09DF463A2264A49B6F4C8EA22F6C266">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<string name="Name">MainModules</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX0C9CF05BB8064C4C9F92A31725D4808B">
+			<Item class="ModuleScript" referent="RBX268E8919B9AE4ABE87D203D3EB6550C9">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">ContainerHandler</string>
-					<string name="ScriptGuid">{8D637C26-777B-4E6F-B229-B5BBE763687F}</string>
+					<string name="ScriptGuid">{1219D923-B93B-47FA-BDED-2F736F48714A}</string>
 					<ProtectedString name="Source"><![CDATA[
 local ParentFolder              = script.Parent
 local MainFolder                = ParentFolder.Parent
@@ -242,12 +242,12 @@ return Container]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBXC9DA699F1DF1448CB725A6E29E67EDD7">
+			<Item class="ModuleScript" referent="RBXA0247227C85D434989C24C408BE8AFC8">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">CutVisualizer</string>
-					<string name="ScriptGuid">{DA9BC569-A631-4B88-BD14-5071401B62AE}</string>
+					<string name="ScriptGuid">{88137EA7-9C15-477B-A1A7-1A8D1C9161EE}</string>
 					<ProtectedString name="Source"><![CDATA[
 local ParentFolder              = script.Parent
 local MainFolder                = ParentFolder.Parent
@@ -345,12 +345,12 @@ return Visualizer]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBX07B6F38346D2461C8C7D7D0DACA5516B">
+			<Item class="ModuleScript" referent="RBX9C0FB111737A472F9B28E4FC66E49400">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Logic</string>
-					<string name="ScriptGuid">{0F51149A-A894-46AD-9EA1-497912477771}</string>
+					<string name="ScriptGuid">{7B5925B5-1743-4351-89E2-ECD4248536DA}</string>
 					<ProtectedString name="Source"><![CDATA[--[[
 
         Credits to the good chap in: https://devforum.roblox.com/t/edge-detection-from-mouse/705054/22
@@ -445,7 +445,7 @@ local LogicHandler = {}
             local result = self:_RaycastFromScreenPoint(pos, Selection:Get())
 
             if not result or result.Instance.Locked then
-                result = self:_RaycastFromScreenPoint(pos)
+                result = self:_RaycastFromScreenPoint(pos, Selection:Get())
 
                 if not result or result.Instance.Locked then
                     return nil, nil
@@ -530,6 +530,8 @@ local LogicHandler = {}
                 self:SetAxisOfAction("Y")
             elseif faces.Right or faces.Left then
                 self:SetAxisOfAction("Z")
+            elseif not faces then
+                return 
             end
 
             storedVariables.previousSelection = part
@@ -610,19 +612,19 @@ return LogicHandler]]></ProtectedString>
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Folder" referent="RBX356A2584291F4BC5A971BA427B09C460">
+		<Item class="Folder" referent="RBX278979C2C5444AE3B21980E543B2315C">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<string name="Name">Util</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX45302286E7074CB4BB85005C85234504">
+			<Item class="ModuleScript" referent="RBX7A51AEB1C1C84DEA8CF3E1925A8FADA7">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Maid</string>
-					<string name="ScriptGuid">{80708BDC-058C-48C6-A855-0E520BFFE65E}</string>
+					<string name="ScriptGuid">{33C041B3-F873-4F87-8E9C-07E02580BBA0}</string>
 					<ProtectedString name="Source"><![CDATA[-- Maid
 -- Author: Quenty
 -- Source: https://github.com/Quenty/NevermoreEngine/blob/version2/Modules/Shared/Events/Maid.lua
@@ -775,12 +777,12 @@ return Maid]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="ModuleScript" referent="RBX38DECE65A17E4ABAA9483FEFE66BE9F5">
+			<Item class="ModuleScript" referent="RBXC4079358E6D247369EFA6F6B7B168008">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">Promise</string>
-					<string name="ScriptGuid">{5BDCE21D-284C-474C-B8A7-073CD4CA5343}</string>
+					<string name="ScriptGuid">{F4FBE1A0-ACE0-4C71-8E49-21FA86518B1B}</string>
 					<ProtectedString name="Source"><![CDATA[--[[
 	An implementation of Promises similar to Promise/A+.
 ]]

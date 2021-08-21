@@ -92,7 +92,7 @@ local LogicHandler = {}
             local result = self:_RaycastFromScreenPoint(pos, Selection:Get())
 
             if not result or result.Instance.Locked then
-                result = self:_RaycastFromScreenPoint(pos)
+                result = self:_RaycastFromScreenPoint(pos, Selection:Get())
 
                 if not result or result.Instance.Locked then
                     return nil, nil
@@ -177,6 +177,8 @@ local LogicHandler = {}
                 self:SetAxisOfAction("Y")
             elseif faces.Right or faces.Left then
                 self:SetAxisOfAction("Z")
+            elseif not faces then
+                return 
             end
 
             storedVariables.previousSelection = part
